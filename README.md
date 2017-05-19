@@ -2,7 +2,7 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-THIS TXT SUMARIZES THE ROLE OF EACH FILE OF THIS APP. HOWEVER, EACH FILE WILL HAVE ITS OWN COMMENTS TO SPECIFIE WHAT CAN BE IMPROVED OR ADDED WITHOUT DISTURBING THE ALREADY IMPLEMENTED FUNCTIONALITIES. 
+This README file summarizes the role of each file of this app. However, each file will have its own comments to specify what can be improved or added without disturbing the already implemented functionalities
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ The "config" folder encloses 3 files :
     1) The "auth.js" file stores the credentials needed to communicate with the several API's used with the app. 
                                 ! THESE INFORMATION ARE DELICATE AND MUST NOT BE SHARED !
     2) The "databse.js" file only contains the link to the database, set up locally here for tests puproses. 
-                            ! IN CASE DEPLOYMENT, THIS INFORMATION WILL HAVE TO BE CHANGED !
+                            ! IN CASE OF DEPLOYMENT, THIS INFORMATION WILL HAVE TO BE CHANGED !
     3) The "passport.js" file treats all the authentication strategies which will either register new informations in case the user has never been registered before, or will attest of the identity of the user to authorize, or not if the user isn't allowed, the access to the other functionalities of the app. It also stores the "flash" messages displayed in case of failed redirections.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
