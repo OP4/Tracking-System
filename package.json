@@ -1,0 +1,41 @@
+{
+  "name": "smartwork_tracking_system",
+  "version": "1.0.0",
+  "description": "MEAN app - Smartwork Tracking System",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
+  "dependencies": {
+    "express": "*",
+    "feathers": "*",
+    "mongoose": "*",
+    "cors": "*",
+    "body-parser": "*",
+    "ejs": "*",
+    "jsonwebtoken": "*",
+    "passport": "*",
+    "passport-jwt": "*",
+    "passport-local": "*",
+    "passport-facebook": "*",
+    "passport-google-oauth": "*",
+    "passport-slack": "*",
+    "passport-http-bearer": "*",
+    "bcryptjs": "*",
+    "oauth2-server": "*",
+    "express-oauth-server": "*",
+    "morgan": "*",
+    "cookie-parser": "*",
+    "express-session": "*",
+    "connect-mongo": "*",
+    "connect-flash": "*",
+    "fs": "*"
+  },
+  "author": "303% Studio",
+  "license": "ISC"
+}
