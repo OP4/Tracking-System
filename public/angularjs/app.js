@@ -7,8 +7,9 @@ The function getSLackProfile should be in the "getSlackUsers.js" file but a mist
 var app = angular.module('myApp', []).controller('getSlackProfile', getSlackProfile);
 
 function getSlackProfile($http) {
-    var token = ""; 
-    var urlSlack = "https://slack.com/api/users.profile.get?token="+token+"&user="+"U3Q5E3J7P"+"&pretty=1";
+    var token = "";
+    var userID = "";
+    var urlSlack = "https://slack.com/api/users.profile.get?token="+token+"&user="+userID+"&pretty=1";
 
     var vm = this;
     vm.init = init;
