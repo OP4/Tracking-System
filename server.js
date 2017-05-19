@@ -73,11 +73,7 @@ var monitoring = express.Router();
 require('./app/tabs/monitoring_page')(monitoring,passport);
 app.use('/', monitoring);
 
-
-
-/* 
-
-												THE "api.js" FILE NEEDS TO BE CORRECTED
+/* THE "api.js" FILE NEEDS TO BE CORRECTED
 
 var api = express.Router();
 require('./app/API/api')(api,passport);
