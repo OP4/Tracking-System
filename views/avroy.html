@@ -1,0 +1,61 @@
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Surveillance - Smartwork Tracking System</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/monitoring_page.css" rel="stylesheet" type="text/css">    
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="/angularjs/app.js"></script>
+    <script src="/angularjs/Controllers/getSlackUsers.js"></script>
+    <script src="/angularjs/Controllers/getCobotMembers.js"></script>
+</head>
+<body>
+    <div ng-controller="getSlackCheckIns as vm" ng-init="vm.init()">
+      <div class="section">
+        <div class="container">
+            <h1><center><b> Checkins Slack </b></center></h1>
+            <hr>
+            <div class="col-md-12">
+                <h1>Responsables</h1><br>
+            </div>
+            <div ng-repeat="user in vm.usersSlackAdmin" ng-if="$index % 6 == 0" class="row">
+                <div class="col-md-2" ng-repeat="user in vm.usersSlackAdmin.slice($index, ($index+6 > vm.usersSlackAdmin.length ? vm.usersSlackAdmin.length : $index+6))"> 
+                    <a ng-href="/profile/:_slack_id"><img ng-src="{{user.profile.image_512}}" class="center-block img-circle img-responsive"></a>
+                    <h4 class="text-center">{{user.profile.first_name}} {{user.profile.last_name}}</h4>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <br><hr><br>
+                <h1>Employés / Stagiaires</h1><br>
+            </div>
+            <div ng-repeat="user in vm.usersSlackBasic" ng-if="$index % 6 == 0" class="row">
+                 <div class="col-md-2" ng-repeat="user in vm.usersSlackBasic.slice($index, ($index+6 > vm.usersSlackBasic.length ? vm.usersSlackBasic.length : $index+6))"> 
+                    <a ng-href="/profile/:_slack_id"><img ng-src="{{user.profile.image_512}}" class="center-block img-circle img-responsive"></a>
+                    <h4 class="text-center">{{user.profile.first_name}} {{user.profile.last_name}}</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div ng-controller="getCobotCheckIns as vm" ng-init="vm.init()">
+      <div class="section">
+        <div class="container">
+            <h1><center><b> Checkins Cobot </b></center></h1>
+            <hr>
+            <div ng-repeat="member in vm.checkinCobot" ng-if="$index % 6 == 0" class="row">
+                <div class="col-md-2" ng-repeat="member in vm.checkinCobot.slice($index, ($index+6 > vm.checkinCobot.length ? vm.checkinCobot.length : $index+6))"> 
+                    <a ng-href="/profile/:_cobot_id"><img ng-src="{{member.picture}}" class="center-block img-circle img-responsive"></a>
+                    <h4 class="text-center">{{member.name}}</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

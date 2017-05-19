@@ -1,0 +1,82 @@
+<html ng-app="myApp" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Smartwork Tracking System</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/home_page.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="/angularjs/app.js"></script>
+    <script src="/angularjs/Controllers/TimeController.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span>Domain</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div ng-controller="TimeController"><h3>{{timestamp}}</h3></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1 class="text-center text-info">Smartwork
+              <br>Tracking
+              <br>System</h1>
+            <p class="lead">Visualisez les activités dans vos bureaux en tout temps !</p>
+            <hr>
+          </div></div></div>
+    </div>
+    <div class="container section section-primary">
+      <div class="col-md-12">
+			    <h2><center><i class="fa fa-lock"></i> Veuillez-vous authentifier pour accéder aux fonctionnalités de cette application</center></h2>
+       		<br>
+          <div class="jumbotron text-center">
+			      <p>Vous ne disposez pas encore d'un compte ? Créez-en un :</p>
+            <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Inscription</a>
+            <br><br>
+            <p>Vous êtes déjà inscrit ou désirez utiliser une autre méthode d'authentification ? Connectez vous avec :</p>
+            <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+			      <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Votre compte local</a>
+			      <a href="/auth/slack"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
+			      <a href="/auth/facebook"><img height="40" width="172" src="http://image.noelshack.com/fichiers/2017/13/1490776982-facebook-sign-in.png" /></a>
+	        </div></div>
+    </div>
+    <hr>
+    <footer class="section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <h3 class="text-center">Smartwork</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <span class="pull-left">Phone: +32 (0)2 808 43 85</span><span class="pull-right"> Email: info@gosmartwork.be</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <p class="text-center text-muted">Copyright © 2017 Smartwork.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

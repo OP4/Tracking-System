@@ -1,0 +1,113 @@
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Surveillance - Smartwork Tracking System</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/monitoring_page.css" rel="stylesheet" type="text/css">    
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="/angularjs/app.js"></script>
+    <script src="/angularjs/Controllers/TimeController.js"></script>
+    <script src="/angularjs/Controllers/getSlackUsers.js"></script>
+    <script src="/angularjs/Controllers/getCobotMembers.js"></script>
+</head>
+<body>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#domain_name.html"><span>Domain_Name</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="/home">Home</a>
+            </li>
+            <li class="active">
+              <a href="/profile">Profile</a>
+            </li>
+            <li>
+              <div ng-controller="TimeController"><h3>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;{{timestamp}}</h3></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dropdown">
+              <div align="center">
+                <button class="btn btn-default" type="button" data-toggle="dropdown">
+                  <p class="text-center btn"><center><b>Veuillez sélectionner le bâtiment à superviser</b></center></p>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a tabindex="0" href="/avroy" target="_blank" onclick="location.reload(); return true;">Slack Smartwork Avroy</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a tabindex="0" href="#Loi.html" target="_blank" onclick="location.reload(); return true;">Slack Smartwork Loi</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a tabindex="0"href="#Monnaie.html" target="_blank" onclick="location.reload(); return true;">Slack Smartwork Monnaie</a></li>
+                </ul>
+              </div>
+              <!--div class="col-md-6" align="right">
+                <button class="btn btn-default" type="button" data-toggle="dropdown">
+                  <p class="text-center btn"><center>Veuillez sélectionner le bâtiment à superviser</center></p>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a tabindex="0" href="#Avroy.html" target="_blank" onclick="location.reload(); return true;">Cobot Smartwork Avroy</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a tabindex="0" href="#Loi.html" target="_blank" onclick="location.reload(); return true;">Cobot Smartwork Loi</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a tabindex="0"href="#Monnaie.html" target="_blank" onclick="location.reload(); return true;">Cobot Smartwork Monnaie</a></li>
+                </ul>
+              </div-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div ng-controller="getSlackUsers as vm" ng-init="vm.init()">
+      <div class="section">
+        <div class="container">
+          <h1><center><b> Membres Slack </b></center></h1>
+          <hr>       
+          <div class="row"  ng-repeat="memberSlack in vm.allUsersSlack" ng-if="$index % 6 == 0" class="row">
+            <div class="col-md-2" ng-repeat="memberSlack in vm.allUsersSlack.slice($index, ($index+6 > vm.allUsersSlack.length ? vm.allUsersSlack.length : $index+6))" > 
+              <a ng-href="/profile/:_slack_id"><img ng-src="{{memberSlack.profile.image_512}}" class="center-block img-circle img-responsive"></a>
+              <h4 class="text-center">{{memberSlack.profile.first_name}} {{memberSlack.profile.last_name}}</h4>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-controller="getCobotMembers as vm" ng-init="vm.init()">
+      <div class="section">
+        <div class="container">
+          <h1><center><b> Membres Cobot </b></center></h1>
+          <hr>
+          <div class="row" ng-repeat="memberCobot in vm.membersCobot" ng-if="$index % 6 == 0" class="row">
+            <div class="col-md-2" ng-repeat="memberCobot in vm.membersCobot.slice($index, ($index+6 > vm.membersCobot.length ? vm.membersCobot.length : $index+6))"> 
+              <a ng-href="/profile/:_cobot_id"><img ng-src="{{memberCobot.picture}}" class="center-block img-circle img-responsive"></a>
+              <h4 class="text-center">{{memberCobot.name}}</h4>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

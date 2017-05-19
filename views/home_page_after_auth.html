@@ -1,0 +1,109 @@
+<html ng-app="myApp" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Bienvenue ! - Smartwork Tracking System</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/home_page.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="/angularjs/app.js"></script>
+    <script src="/angularjs/Controllers/TimeController.js"></script>
+</head>
+<body>  
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span>Domain</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/profile">Profile</a></li>
+            <li><div ng-controller="TimeController"><h3>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;{{timestamp}}</h3></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section section-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="nav nav-justified nav-pills">
+              <div align="left"><li class="active ">
+				        <div class="dropdown">
+                	<button class="btn btn-default" type="button" data-toggle="dropdown">
+                		<p class="text-center btn"><center>Tutoriel</center></p>
+                		<span class="caret"></span>
+                	</button>
+             		  <ul class="dropdown-menu" role="menu">
+						        <li><a tabindex="0"><b>GESTION</b></a></li>
+                    <li><a tabindex="0" href="#Cobot_Info.html" onclick="location.reload(); return true;">&nbsp; 1. Cobot</a></li>
+                    <li><a tabindex="0" href="#Monitoring_Info.html" onclick="location.reload(); return true;">&nbsp; 2. Présences</a></li>
+                    <li><a tabindex="0" href="#Diffusion_Info.html" onclick="location.reload(); return true;">&nbsp; 3. Diffusion</a></li>
+						        <li><a tabindex="0" href="#Informations.html" onclick="location.reload(); return true;">&nbsp; 4. Informations</a></li>
+						        <hr>
+						        <li><a tabindex="0"><b>ADMINISTRATION</b></a></li>
+						        <li><a tabindex="0" href="#Logs_Journal.html" onclick="location.reload(); return true;">&nbsp; 1. Journal de logs</a></li>
+                    <li><a tabindex="0" href="#Extra_Functionalities.html" onclick="location.reload(); return true;">&nbsp; 2. Fonctionnalités supplémentaires</a></li>
+                  </ul>
+                </div>
+              </li></div>
+			        <div align="left"><li class="active">
+				        <div class="dropdown">
+                	<button class="btn btn-default" type="button" data-toggle="dropdown">
+                		<p class="text-center btn"><center>Gestion</center></p>
+                		<span class="caret"></span>
+                	</button>
+					        <ul class="dropdown-menu" role="menu">
+                    <li><a tabindex="0" href="#cobot_page.html" target="_blank"><img src="http://image.noelshack.com/fichiers/2017/13/1490642414-cobot-logo-2x.jpg" class="center-block img-responsive img-thumbnail"></a></li>
+                    <li><a tabindex="0" href="/monitoring" target="_blank"><img src="http://image.noelshack.com/fichiers/2017/13/1490642414-presences.png" class="center-block img-responsive img-thumbnail"></a></li>
+                    <li><a tabindex="0" href="#Diffusion_page.html" target="_blank"><img src="http://image.noelshack.com/fichiers/2017/13/1490642415-diffusion.png" class="center-block img-responsive img-thumbnail"></a></li>
+						        <li><a tabindex="0" href="#informations_page.html" target="_blank"><img src="http://image.noelshack.com/fichiers/2017/13/1490642414-info.jpg" class="center-block img-responsive img-thumbnail"></a></li>
+                	</ul>
+            	  </div>
+              </li></div>
+			      </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="lead text-justify"><small><br>Cette application est destinée à la gestion des présences au sein de vos bâtiments.<br><br>
+            L'onglet "Tutoriel" présente la structure de cette application et détaille les différentes actions pouvant être entreprises.<br><br>
+            L'onglet "Gestion" regroupe les différentes fonctionnalités.<br><br>Si vous êtes authentifié en tant qu'administrateur, un journal de
+             logs est disponible ainsi que plusieurs fonctionnalités supplémentaires.</br></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <h3 class="text-center">Smartwork</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <span class="pull-left">Phone: +32 (0)2 808 43 85</span><span class="pull-right"> Email: info@gosmartwork.be</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-12">
+            <p class="text-center text-muted">Copyright © 2017 Smartwork.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
